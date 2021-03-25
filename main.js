@@ -14,5 +14,21 @@ const submitButton = document.querySelector('#submit-button');
 
 submitButton.addEventListener('click', function() {
     const inputValue = input.value;
-    results.innerText = encode(inputValue);
+    //results.innerText = encode(inputValue);
+
+    //determine which radio is pressed;
+    const radios = document.querySelectorAll('[type="radio"]');
+    for (const radio of radios) {
+        if (radio.checked === true && radio.value === "encode") {
+            results.innerText = encode(inputValue);
+        }
+
+        if (radio.checked === true && radio.value === "madlib") {
+            results.innerText = madlib(inputValue);
+        }
+
+        if (radio.checked === true && radio.value === "translate") {
+            results.innerText = translate(inputValue);
+        } 
+    }
 })
