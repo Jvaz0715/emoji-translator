@@ -33,11 +33,18 @@ submitButton.addEventListener('click', function() {
 
         if (radio.checked === true && radio.value === "search") {
             const array = search(inputValue);
-            console.log(array);
-            //result.innerText = array;
-            for (let i = 0; i < array.length; i++) {
-                console.log(array[i].symbol);
+            //console.log(array);
+            result.innerHTML = '';
+            if (array.length === 0) {
+                results.innerText = "No emojis found";
+            } else {
+                for (let i = 0; i < array.length; i++) {
+                    //console.log(array[i].symbol);
+                    let emoji = array[i].symbol;
+                    results.innerText += emoji;
+                }
             }
+            
         }
     }
 })
