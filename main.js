@@ -29,6 +29,10 @@ submitButton.addEventListener('click', function() {
 
         if (radio.checked === true && radio.value === "translate") {
             results.innerText = translate(inputValue);
-        } 
+        }
+
+        if (radio.checked === true && radio.value === "search") {
+            console.log(search(inputValue));
+;        }
     }
 })
