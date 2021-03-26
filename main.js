@@ -35,13 +35,18 @@ submitButton.addEventListener('click', function() {
             const array = search(inputValue);
             //console.log(array);
             result.innerHTML = '';
+            //handles an empty array
             if (array.length === 0) {
                 results.innerText = "No emojis found";
-            } else {
+            } 
+            //handles array with emojis
+            else {
                 for (let i = 0; i < array.length; i++) {
                     //console.log(array[i].symbol);
                     let emoji = array[i].symbol;
-                    results.innerText += emoji;
+                    const para = document.createElement("P");
+                    para.InnerText = emoji;
+                    results.appendChild(para);
                 }
             }
             
