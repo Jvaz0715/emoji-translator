@@ -32,7 +32,12 @@ submitButton.addEventListener('click', function() {
         }
 
         if (radio.checked === true && radio.value === "search") {
-            console.log(search(inputValue));
-;        }
+            const array = search(inputValue);
+            console.log(array);
+            //result.innerText = array;
+            for (let i = 0; i < array.length; i++) {
+                console.log(array[i].symbol);
+            }
+        }
     }
 })
